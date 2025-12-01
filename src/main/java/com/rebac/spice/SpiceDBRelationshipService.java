@@ -14,7 +14,6 @@ public class SpiceDBRelationshipService {
         addRelationship("post", "100", "owner", "user", "1");
         addRelationship("group", "10", "owner", "user", "1");
         addRelationship("user", "1", "follower", "user", "2");
-        addRelationship("user", "1", "follower", "user", "2");
     }
 
     public void addRelationship(String resourceType, String resourceId,
