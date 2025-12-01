@@ -1,5 +1,5 @@
 spring :
   spicedb :
-    endpoint: ${SPICEDB_ENDPOINT:spicedb:50051}
+    endpoint: ${SPICEDB_ENDPOINT:localhost:50051}
     token: ${SPICEDB_TOKEN:my-secret-key}
     tls-enabled: false

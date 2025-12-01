@@ -1,0 +1,29 @@
+definition user {
+    relation follower: user
+    relation public_scope: user:*
+
+    permission view = public_scope + follower
+}
+
+definition group {
+    relation owner: user
+    relation manager: user
+    relation member: user
+    relation public_scope: user:*
+
+    permission view = public_scope + member
+    permission edit = manager + owner
+    permission delete = owner
+}
+
+definition post {
+    relation owner: user
+    relation parent: post
+    relation group: group
+
+    relation is_root: user:*
+
+    permission view = (owner->view & group->view) & (parent->view + is_root)
+    permission edit = owner
+    permission delete = owner + group->delete
+}

@@ -36,7 +36,7 @@ services:
       mariadb:
         condition: service_healthy
     ports:
-      - "50051"
+      - "50051:50051"
     environment:
       - SPICEDB_GRPC_PRESHARED_KEY=my-secret-key
       - SPICEDB_DATASTORE_ENGINE=mysql

@@ -25,8 +25,9 @@ public class SpiceDBConfig {
     }
 
     @Bean(destroyMethod = "shutdown")
-    public ManagedChannel managedChannel(final SpiceDBConnectionDetails connectionDetails) {
-        final ManagedChannelBuilder<?> builder = ManagedChannelBuilder.forTarget(connectionDetails.endpoint());
+    public ManagedChannel managedChannel(SpiceDBConnectionDetails connectionDetails) {
+        ManagedChannelBuilder<?> builder = ManagedChannelBuilder
+                .forTarget(connectionDetails.endpoint());
 
         if (!connectionDetails.tlsEnabled()) {
             builder.usePlaintext();
