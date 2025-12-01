@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS mydb;
+CREATE DATABASE IF NOT EXISTS spicedb;
+
+CREATE USER IF NOT EXISTS 'myuser'@'%' IDENTIFIED BY 'mysecret';
+GRANT ALL PRIVILEGES ON mydb.* TO 'myuser'@'%';
+GRANT ALL PRIVILEGES ON spicedb.* TO 'myuser'@'%';

@@ -26,12 +26,22 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.boot:spring-boot-testcontainers'
     testImplementation 'org.testcontainers:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:3.3.2'
+
+    //spice db
+    implementation "com.authzed.api:authzed:1.4.1"
+    implementation 'io.grpc:grpc-api:1.72.0'
+    implementation 'io.grpc:grpc-stub:1.72.0'
+
+    //spring-boot docker compose
+    implementation "org.springframework.boot:spring-boot-docker-compose"
 }
 
 tasks.named('test') {

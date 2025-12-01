@@ -1,0 +1,43 @@
+services:
+  mariadb:
+    image: 'mariadb:11.4.8'
+    restart: unless-stopped
+    environment:
+      - 'MARIADB_DATABASE=mydb'
+      - 'MARIADB_PASSWORD=mysecret'
+      - 'MARIADB_ROOT_PASSWORD=verysecret'
+      - 'MARIADB_USER=myuser'
+    ports:
+      - '3306'
+    healthcheck:
+      test: [ "CMD", "healthcheck.sh", "--connect", "--innodb_initialized" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+  spicedb-migrate:
+    image: authzed/spicedb:latest
+    command: [ "migrate", "head" ]
+    environment:
+      - SPICEDB_DATASTORE_ENGINE=mysql
+      - SPICEDB_DATASTORE_CONN_URI=myuser:mysecret@tcp(mariadb:3306)/spicedb?parseTime=true
+    depends_on:
+      mariadb:
+        condition: service_healthy
+
+  spicedb:
+    image: authzed/spicedb:latest
+    command: [ "serve", "--grpc-preshared-key", "my-secret-key" ]
+    depends_on:
+      spicedb-migrate:
+        condition: service_completed_successfully
+      mariadb:
+        condition: service_healthy
+    ports:
+      - "50051"
+    environment:
+      - SPICEDB_GRPC_PRESHARED_KEY=my-secret-key
+      - SPICEDB_DATASTORE_ENGINE=mysql
+      - SPICEDB_DATASTORE_CONN_URI=myuser:mysecret@tcp(mariadb:3306)/spicedb?parseTime=true
