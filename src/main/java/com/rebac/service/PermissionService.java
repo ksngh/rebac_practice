@@ -1,4 +1,4 @@
-package com.rebacService.service;
+package com.rebac.service;
 
 import com.rebac.entity.Post;
 import com.rebac.entity.User;
