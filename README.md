@@ -37,8 +37,7 @@ cd rebac_practice
 ```text
 create
 read
-delete
-update
+refactor
 ```
 
 각 브랜치는 **이전 단계의 구현을 포함한 상태**에서 확장됩니다.
@@ -47,8 +46,7 @@ update
 |-------|------|
 | create | 관계(tuple) 생성 및 권한 정의 |
 | read | 관계 기반 조회 권한 판단 |
-| delete | 관계 제거에 따른 권한 변화 |
-| update | 관계 변경 시 권한 재계산 |
+| refactor | RBAC -> ReBAC으로 권한 검증 전환 |
 
 ---
 
@@ -134,4 +132,5 @@ git checkout refactor
   - RBAC 방식 vs ReBAC 방식으로 비교하여 복잡도 차이 확인
 
 ---
+
 
