@@ -1,0 +1,9 @@
+definition user {
+    relation follower: user
+    permission view = follower
+}
+
+definition post {
+    relation author: user
+    permission view = author + author->view
+}
