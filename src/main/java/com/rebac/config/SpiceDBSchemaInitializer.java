@@ -1,7 +1,6 @@
-package com.rebac.spice;
+package com.rebac.config;
 
 import com.authzed.api.v1.*;
-import io.grpc.StatusRuntimeException;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.ClassPathResource;
@@ -26,7 +25,7 @@ public class SpiceDBSchemaInitializer {
 
         WriteSchemaResponse response = schemaStub.writeSchema(request);
 
-        ZedToken zedToken = response.getWrittenAt();
-        System.out.println("Schema written successfully, zedToken = " + zedToken.getToken());
+        System.out.println("Schema written successfully");
     }
+
 }
