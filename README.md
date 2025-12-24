@@ -103,49 +103,35 @@ git checkout read
 
 ---
 
-## 6. Step 3 – Delete (관계 삭제)
+## 5. Step 3 – Refactor (리팩터링)
 
 ### 브랜치 이동
 
 ```bash
-git checkout delete
+git checkout refactor
 ```
 
 ---
 
 ### 학습 목표
 
-- 관계가 **삭제되었을 때 권한이 어떻게 즉시 변하는지** 이해
+- 기존 **RBAC 기반 권한 판단 로직이 왜 복잡해지는지** 직접 확인
+- 역할(Role) 중심 모델에서 관계(Relation) 중심 모델(ReBAC)로 전환하는 과정을 실습
+- 권한 판단 로직이  
+  **비즈니스 규칙 → 관계 모델 → 권한 체크**로 단순화되는 흐름을 체감
 
 ---
 
 ### 주요 내용
 
-- Relation Tuple 삭제
-- 삭제 후 READ/WRITE 권한 변화
+- RBAC 기반 권한 구조 제거
+  - Role, UserRole, PostRole, RolePermission 중심 로직 제거
+- 관계 기반 모델(ReBAC)로 리팩터링
+- Service 레벨 권한 판단 로직 단순화
+  - 역할 해석 로직 제거
+  - 관계 존재 여부만으로 READ / WRITE 판단
+- 동일한 요구사항을
+  - RBAC 방식 vs ReBAC 방식으로 비교하여 복잡도 차이 확인
 
 ---
-
-## 7. Step 4 – Update (관계 변경)
-
-### 브랜치 이동
-
-```bash
-git checkout update
-```
-
----
-
-### 학습 목표
-
-- 관계 변경(update)이 권한 모델에 미치는 영향 이해
-- 실서비스에서 가장 빈번한 케이스 다루기
-
----
-
-### 주요 내용
-
-- 관계 상태 변경 (예: FOLLOW → BLOCK)
-- UPDATE 권한 체크
-- 기존 관계 무효화 + 신규 관계 적용
 
