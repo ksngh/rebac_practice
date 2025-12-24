@@ -35,11 +35,10 @@ cd rebac_practice
 이 저장소는 **CRUD 단위로 브랜치를 분리**하여 실습을 진행합니다.
 
 ```text
-main
- ├─ create
- ├─ read
- ├─ delete
- └─ update
+create
+read
+delete
+update
 ```
 
 각 브랜치는 **이전 단계의 구현을 포함한 상태**에서 확장됩니다.
@@ -149,3 +148,4 @@ git checkout update
 - 관계 상태 변경 (예: FOLLOW → BLOCK)
 - UPDATE 권한 체크
 - 기존 관계 무효화 + 신규 관계 적용
+
