@@ -10,9 +10,16 @@ public class RelationshipService {
 
     private final PermissionsServiceGrpc.PermissionsServiceBlockingStub permissionsStub;
 
-    public WriteRelationshipsResponse addRelationship(String resourceType, String resourceId,
-                                String relation, String subjectType, String subjectId) {
-        // TODO: 관계 튜플을 생성하고 SpiceDB에 write 한다.
+    public WriteRelationshipsResponse addRelationship(
+            String resourceType,
+            String resourceId,
+            String relation,
+            String subjectType,
+            String subjectId
+    ) {
+        // step 1. Relationship tuple 생성
+        // step 2. RelationshipUpdate 생성 (CREATE)
+        // step 3. WriteRelationshipsRequest 생성 및 전송
         return null;
     }
 
