@@ -28,11 +28,15 @@ class RelationshipServiceTest {
         String permission = "view";
 
         WriteRelationshipsResponse writeRelationshipsResponse =
-                relationshipService.addRelationship(resourceType, resourceId, relation, subjectType, subjectId);
+                relationshipService.addRelationship(
+                        resourceType, resourceId, relation, subjectType, subjectId
+                );
 
         // when
         boolean result =
-                relationshipService.checkPermission(resourceType, resourceId, permission, subjectType, subjectId);
+                relationshipService.checkPermission(
+                        resourceType, resourceId, permission, subjectType, subjectId
+                );
 
         //then
         assertThat(result).isTrue();
@@ -50,11 +54,15 @@ class RelationshipServiceTest {
         String permission = "view";
 
         WriteRelationshipsResponse writeRelationshipsResponse =
-                relationshipService.addRelationship(resourceType, resourceId, relation, subjectType, subjectId);
+                relationshipService.addRelationship(
+                        resourceType, resourceId, relation, subjectType, subjectId
+                );
 
         // when
         boolean result =
-                relationshipService.checkPermission(resourceType, resourceId, permission, subjectType, "Bob");
+                relationshipService.checkPermission(
+                        resourceType, resourceId, permission, subjectType, "Bob"
+                );
 
         //then
         assertThat(result).isFalse();
