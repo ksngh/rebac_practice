@@ -10,12 +10,13 @@ public class RelationshipService {
 
     private final PermissionsServiceGrpc.PermissionsServiceBlockingStub permissionsStub;
 
+    //todo : 관계 튜플 생성 후 SpiceDB를 통해 저장
     public WriteRelationshipsResponse addRelationship(
-            String resourceType,
-            String resourceId,
-            String relation,
-            String subjectType,
-            String subjectId
+        String resourceType, // 리소스 타입 (user / post)
+        String resourceId, // 리소스 id (Alice, post1)
+        String permission, // 권한 (view)
+        String subjectType, // 주체의 타입 (user)
+        String subjectId // 주체의 id (Alice)
     ) {
         // step 1. Relationship tuple 생성
         // step 2. RelationshipUpdate 생성 (CREATE)
