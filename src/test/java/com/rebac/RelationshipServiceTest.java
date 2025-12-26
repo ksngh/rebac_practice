@@ -17,7 +17,7 @@ class RelationshipServiceTest {
     private RelationshipService relationshipService;
 
     @Test
-    @DisplayName("관계 튜플을 SpiceDB에 write 할 수 있다.")
+    @DisplayName("관계 튜플을 SpiceDB를 통해 저장 할 수 있다.")
     void create_relationship_success() {
         //given
         String resourceType = "post";
