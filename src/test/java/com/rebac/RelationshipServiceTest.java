@@ -1,5 +1,6 @@
 package com.rebac;
 
+import com.authzed.api.v1.WriteRelationshipsResponse;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,10 @@ class RelationshipServiceTest {
         String subjectId = "Alice";
         String permission = "view";
 
-        relationshipService.addRelationship(resourceType, resourceId, relation, subjectType, subjectId);
+        WriteRelationshipsResponse writeRelationshipsResponse =
+                relationshipService.addRelationship(
+                        resourceType, resourceId, relation, subjectType, subjectId
+                );
 
         // when
         boolean result =
@@ -49,7 +53,10 @@ class RelationshipServiceTest {
         String subjectId = "Alice";
         String permission = "view";
 
-        relationshipService.addRelationship(resourceType, resourceId, relation, subjectType, subjectId);
+        WriteRelationshipsResponse writeRelationshipsResponse =
+                relationshipService.addRelationship(
+                        resourceType, resourceId, relation, subjectType, subjectId
+                );
 
         // when
         boolean result =
