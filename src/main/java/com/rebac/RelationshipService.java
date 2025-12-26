@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class RelationshipService {
 
-    private final PermissionsServiceGrpc.PermissionsServiceBlockingStub permissionsStub;
+    private final PermissionsServiceGrpc.PermissionsServiceBlockingStub permissionsService;
 
     //TODO : 권한 검증 로직 작성
     public boolean checkPermission(
@@ -64,7 +64,7 @@ public class RelationshipService {
                 .addUpdates(relationshipUpdate)
                 .build();
 
-        return permissionsStub.writeRelationships(request);
+        return permissionsService.writeRelationships(request);
     }
 
 }
