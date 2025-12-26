@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class RelationshipService {
 
-    private final PermissionsServiceGrpc.PermissionsServiceBlockingStub permissionsStub;
+    private final PermissionsServiceGrpc.PermissionsServiceBlockingStub permissionsService;
 
     //todo : 관계 튜플 생성 후 SpiceDB를 통해 저장
     public WriteRelationshipsResponse addRelationship(
