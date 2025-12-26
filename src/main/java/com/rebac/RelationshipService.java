@@ -12,11 +12,12 @@ public class RelationshipService {
 
     //TODO : 권한 검증 로직 작성
     public boolean checkPermission(
-            String resourceType,
-            String resourceId,
-            String permission,
-            String subjectType,
-            String subjectId) {
+            String resourceType, // 리소스 타입
+            String resourceId, // 리소스 id
+            String permission, // 권한
+            String subjectType, // 주체
+            String subjectId // 주체의 id
+    ) {
         // step 1. CheckPermissionRequest 만들기
         // step 2. permission check 호출
         // step 3. 결과 해석
