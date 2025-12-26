@@ -14,7 +14,7 @@ public class RelationshipService {
     public WriteRelationshipsResponse addRelationship(
         String resourceType, // 리소스 타입 (user / post)
         String resourceId, // 리소스 id (Alice, post1)
-        String permission, // 권한 (view)
+        String relation, // 관계 (follower)
         String subjectType, // 주체의 타입 (user)
         String subjectId // 주체의 id (Alice)
     ) {
