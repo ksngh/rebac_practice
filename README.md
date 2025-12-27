@@ -6,8 +6,12 @@ CRUD 단위로 직접 실습하며 이해하기 위한 예제 프로젝트입니
 ---
 # 환경 설정 문서: https://buly.kr/9MRjJbB
 
-# 행사장 WIFI 접속: https://buly.kr/GvoJUyY<br>(구성원 ID: robot.hoony@woowahan.com)
-**오프라인 참가자만 신청해 주세요.**
+# 행사장 WIFI 접속
+- 와이파이: https://buly.kr/GvoJUyY
+- 네트워크 이름: woowanet.join
+- 연결 주소: woowanet.woowa.in
+- 구성원 AD 계정: robot.hoony
+
 
 ---
 
@@ -98,6 +102,7 @@ read
 | read | 관계 기반 조회 권한 판단 |
 
 ---
+
 
 
 
