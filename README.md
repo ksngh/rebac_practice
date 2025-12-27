@@ -4,6 +4,11 @@
 CRUD 단위로 직접 실습하며 이해하기 위한 예제 프로젝트입니다.
 
 ---
+# 환경 설정 문서: https://buly.kr/9MRjJbB
+
+# 행사장 WIFI 접속: https://buly.kr/GvoJUyY
+
+---
 
 # 0. Docker 설치
 Docker가 설치 되어 있다면, #1으로 이동해 주세요.
@@ -92,6 +97,7 @@ read
 | read | 관계 기반 조회 권한 판단 |
 
 ---
+
 
 
 
