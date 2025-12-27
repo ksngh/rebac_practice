@@ -5,7 +5,27 @@ CRUD 단위로 직접 실습하며 이해하기 위한 예제 프로젝트입니
 
 ---
 
-## 1. 프로젝트 클론 및 실행 방법
+# 0. Docker 설치
+Docker가 설치 되어 있다면, #1으로 이동해 주세요.
+
+### Mac
+```
+brew install docker docker-compose colima
+colima start
+
+mkdir -p ~/.docker/cli-plugins
+ln -sfn $(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+```
+
+### Window
+```
+sudo apt-get update
+sudo apt-get install docker.io docker-compose-v2
+```
+
+---
+
+# 1. 프로젝트 클론 및 실행 방법
 
 ### 1.1 Git Clone
 
@@ -67,5 +87,6 @@ read
 | read | 관계 기반 조회 권한 판단 |
 
 ---
+
 
 
