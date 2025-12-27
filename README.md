@@ -7,8 +7,8 @@ CRUD 단위로 직접 실습하며 이해하기 위한 예제 프로젝트입니
 # 환경 설정 문서: https://buly.kr/9MRjJbB
 
 # 행사장 WIFI 접속: https://buly.kr/GvoJUyY
-## 오프라인 참가자만 신청해 주세요.
-## 구성원 ID: robot.hoony@woowahan.com
+**오프라인 참가자만 신청해 주세요.**
+**구성원 ID: robot.hoony@woowahan.com**
 
 ---
 
@@ -99,6 +99,7 @@ read
 | read | 관계 기반 조회 권한 판단 |
 
 ---
+
 
 
 
