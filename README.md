@@ -19,6 +19,9 @@ ln -sfn $(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plu
 
 ### Window
 ```
+wsl --install
+
+# wsl 내에서
 sudo apt-get update
 sudo apt-get install docker.io docker-compose-v2
 ```
@@ -87,6 +90,7 @@ read
 | read | 관계 기반 조회 권한 판단 |
 
 ---
+
 
 
 
